@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Download, ChevronRight, Signal, Wifi, Battery, Phone, MessageSquare, Camera, Settings, MapPin, ShoppingBag } from 'lucide-react';
+import { Download, ChevronRight, Signal, Wifi, Battery, Phone, MessageSquare, Camera, Settings } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [screen, setScreen] = useState<'welcome' | 'home'>('welcome');
+  const [showAppPreview, setShowAppPreview] = useState(false);
 
   // Typewriter Logic
   const words = ["vite.", "veetaa."];
@@ -142,19 +143,14 @@ const Hero: React.FC = () => {
                     <div className="flex-1 px-4 py-6 flex flex-col justify-between">
 
                       {/* Widgets */}
-                      <div className="grid grid-cols-2 gap-3 mb-4">
-                        <div className="bg-white/40 backdrop-blur-md rounded-3xl p-4 flex flex-col justify-between aspect-square shadow-sm">
-                          <div className="p-2 bg-blue-500 rounded-full w-fit text-white">
-                            <MapPin size={20} />
-                          </div>
-                          <span className="text-white font-bold text-sm drop-shadow-sm">Livraison <br /> en cours</span>
-                        </div>
-                        <div className="bg-white/40 backdrop-blur-md rounded-3xl p-4 flex flex-col justify-between aspect-square shadow-sm">
-                          <div className="p-2 bg-green-500 rounded-full w-fit text-white">
-                            <ShoppingBag size={20} />
-                          </div>
-                          <span className="text-white font-bold text-sm drop-shadow-sm">Mes <br /> Commandes</span>
-                        </div>
+                      {/* Mini Map Widget */}
+                      <div className="w-full mb-4 bg-white rounded-3xl p-4 shadow-lg border border-white/20 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span className="text-gray-800 font-bold text-lg mb-2 z-10">Zone de travail</span>
+                        <img
+                          src="/MAPS.png"
+                          alt="Zone de travail"
+                          className="w-full h-auto object-contain z-10"
+                        />
                       </div>
 
                       {/* App Grid */}
@@ -182,7 +178,10 @@ const Hero: React.FC = () => {
                             <span className="text-[7px] text-white font-bold drop-shadow-lg tracking-wider opacity-90">Messages</span>
                           </div>
 
-                          <div className="flex flex-col items-center gap-1.5 group">
+                          <div
+                            className="flex flex-col items-center gap-1.5 group cursor-pointer"
+                            onClick={() => setShowAppPreview(true)}
+                          >
                             <div className="w-14 h-14 bg-white/5 backdrop-blur-md rounded-[1.4rem] flex items-center justify-center shadow-2xl p-0 overflow-hidden transform scale-110 -translate-y-1.5 transition-transform active:scale-100">
                               <img src="/veetaa-app-icon.png" className="w-full h-full object-cover" alt="Veetaa" />
                             </div>
@@ -200,6 +199,14 @@ const Hero: React.FC = () => {
                     </div>
                   </div>
 
+                  {/* APP PREVIEW OVERLAY */}
+                  <div
+                    className={`absolute inset-0 w-full h-full bg-black z-50 transition-all duration-500 ease-in-out ${showAppPreview ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-full pointer-events-none'
+                      }`}
+                    onClick={() => setShowAppPreview(false)}
+                  >
+                    <img src="/gh.jpg" className="w-full h-full object-cover" alt="App Preview" />
+                  </div>
                 </div>
 
                 <div className="top">
@@ -209,13 +216,13 @@ const Hero: React.FC = () => {
                   <div className="speaker"></div>
                 </div>
               </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#FF4B00] rounded-full blur-[80px] opacity-20 -z-10"></div>
             </div>
-          </div>
 
+            {/* Decorative elements */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#FF4B00] rounded-full blur-[80px] opacity-20 -z-10"></div>
+          </div>
         </div>
+
       </div>
     </section>
   );

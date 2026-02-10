@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Download, ShieldCheck, QrCode, Smartphone } from 'lucide-react';
+import { Download, ShieldCheck, Smartphone } from 'lucide-react';
 
 const DownloadSection: React.FC = () => {
   return (
@@ -54,7 +54,11 @@ const DownloadSection: React.FC = () => {
           <div className="w-full lg:w-2/5 flex flex-col items-center justify-center gap-10 relative z-10">
             <div className="bg-white p-8 rounded-[3rem] shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <div className="w-56 h-56 bg-gray-50 rounded-2xl flex items-center justify-center relative overflow-hidden group">
-                <QrCode size={160} className="text-[#1E1E1E] group-hover:scale-110 transition-transform" />
+                <img
+                  src="/qr-code-new.png"
+                  alt="Scan QR"
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                />
                 <div className="absolute inset-0 bg-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <p className="text-sm text-[#1E1E1E] font-black text-center px-6">Scanner pour installer</p>
                 </div>
