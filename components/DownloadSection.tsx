@@ -46,7 +46,7 @@ const DownloadSection: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                <span className="text-sm font-bold tracking-widest uppercase">v3.1.2 stable</span>
+                <span className="text-sm font-bold tracking-widest uppercase">v1.1 stable</span>
               </div>
             </div>
           </div>

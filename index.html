@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Veetaa - Tout ce que vous voulez, livré vite</title>
+  <title>Veetaa </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -29,7 +29,154 @@
     .bg-veetaa-orange {
       background-color: #FF4B00;
     }
+
+    @keyframes draw-reveal {
+      0% {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0.5;
+      }
+
+      100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+      }
+    }
+
+    .animate-draw {
+      animation: draw-reveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Phone Mockup CSS */
+    .card {
+      width: 300px;
+      height: 600px;
+      /* background: black;  Removed to match design if needed, or kept */
+      background: black;
+      border-radius: 35px;
+      border: 2px solid rgb(40, 40, 40);
+      padding: 7px;
+      position: relative;
+      box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+      margin: 0 auto;
+    }
+
+    .card-int {
+      background: #1E1E1E;
+      height: 100%;
+      border-radius: 25px;
+      transition: all 0.6s ease-out;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .top {
+      position: absolute;
+      top: 0px;
+      right: 50%;
+      transform: translate(50%, 0%);
+      width: 35%;
+      height: 18px;
+      background-color: black;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      z-index: 20;
+    }
+
+    .speaker {
+      position: absolute;
+      top: 2px;
+      right: 50%;
+      transform: translate(50%, 0%);
+      width: 40%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: rgb(20, 20, 20);
+    }
+
+    .camera {
+      position: absolute;
+      top: 6px;
+      right: 84%;
+      transform: translate(50%, 0%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.048);
+    }
+
+    .int {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background-color: rgba(0, 0, 255, 0.212);
+    }
+
+    .btn1,
+    .btn2,
+    .btn3,
+    .btn4 {
+      position: absolute;
+      width: 2px;
+      background-image: linear-gradient(to right, #111111, #222222, #333333, #464646, #595959);
+    }
+
+    .btn1,
+    .btn2,
+    .btn3 {
+      height: 45px;
+      top: 30%;
+      right: -4px;
+    }
+
+    .btn2,
+    .btn3 {
+      transform: scale(-1);
+      left: -4px;
+      right: auto;
+    }
+
+    .btn2,
+    .btn3 {
+      height: 30px;
+    }
+
+    .btn2 {
+      top: 26%
+    }
+
+    .btn3 {
+      top: 36%
+    }
+
+    @keyframes text-fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(4px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes pulse-cursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .animate-pulse-cursor {
+      animation: pulse-cursor 0.8s step-end infinite;
+    }
   </style>
+  <link rel="icon" href="/favicon.png" />
 </head>
 
 <body class="bg-white text-[#1E1E1E] overflow-x-hidden">

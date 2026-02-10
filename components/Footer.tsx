@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t border-gray-100 pt-24 pb-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-          
+
           <div className="space-y-8">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-[#FF4B00] rounded-2xl flex items-center justify-center text-white font-black text-2xl">
@@ -55,9 +55,9 @@ const Footer: React.FC = () => {
             <h5 className="text-lg font-black mb-8">Newsletter</h5>
             <p className="text-gray-500 text-sm mb-6 font-medium">Recevez nos offres exclusives directement.</p>
             <div className="flex flex-col gap-3">
-              <input 
-                type="email" 
-                placeholder="Votre email" 
+              <input
+                type="email"
+                placeholder="Votre email"
                 className="bg-gray-50 border-none px-6 py-4 rounded-2xl focus:ring-2 focus:ring-[#FF4B00] font-medium"
               />
               <button className="bg-[#1E1E1E] text-white font-black py-4 rounded-2xl hover:bg-[#FF4B00] transition-colors">
@@ -70,13 +70,13 @@ const Footer: React.FC = () => {
 
         <div className="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-gray-400 text-sm font-medium">
-            © 2026 Veetaa App. Tous droits réservés. <span className="hidden md:inline"> | </span> 
+            © 2026 Veetaa App. Tous droits réservés. <span className="hidden md:inline"> | </span>
             <span className="block md:inline">Livré vite, à chaque fois.</span>
           </p>
           <div className="flex items-center gap-8 grayscale opacity-30">
-             <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-8" />
-             <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-8" />
-             <img src="https://img.icons8.com/color/48/google-pay.png" alt="GPay" className="h-8" />
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-8" />
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-8" />
+            <img src="https://img.icons8.com/color/48/google-pay.png" alt="GPay" className="h-8" />
           </div>
         </div>
       </div>
